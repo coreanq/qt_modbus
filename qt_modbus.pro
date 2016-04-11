@@ -8,7 +8,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = LSIS_RTU_LSBUS_TESTER
+TARGET = ModbusRTU-ASCII Tester
 TEMPLATE = app
 
 

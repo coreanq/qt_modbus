@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    QCoreApplication::setOrganizationName("LSIS");
-    QCoreApplication::setOrganizationDomain("LV Drvie");
+    QCoreApplication::setOrganizationName("COMPANY");
+    QCoreApplication::setOrganizationDomain("PART");
     QCoreApplication::setApplicationName(QString("%1").arg(PROGRAM_TITLE));
 
     w.setWindowTitle(QString("%1 ver %2")
