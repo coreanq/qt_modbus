@@ -20,7 +20,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     serialport.h \
     version.h \
-    modbuswnd.h
+    modbuswnd.h \
+    CRC.h
 
 FORMS    += mainwindow.ui \
     modbuswnd.ui

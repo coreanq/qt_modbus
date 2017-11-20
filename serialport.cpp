@@ -371,7 +371,7 @@ void SerialPort::timerEvent(QTimerEvent *event)
 {
     if ( event->timerId() == m_timerResponseTimeout->timerId())
     {
-        qDebug() << Q_FUNC_INFO << m_msec_responseTimeout << m_recvPkt.toHex();
+//        qDebug() << Q_FUNC_INFO << m_msec_responseTimeout << m_recvPkt.toHex();
         m_timerResponseTimeout->stop();
         m_timerRTU35Timeout->stop();
 

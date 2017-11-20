@@ -783,7 +783,53 @@
        <string>CRC Calc</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0" colspan="4">
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btnCRC16">
+         <property name="text">
+          <string>CRC16</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Result Hex: 0x</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineDataResultHex">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="4">
+        <layout class="QHBoxLayout" name="horizontalLayout_24">
+         <item>
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Result ASCII: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineDataResultASCII">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0" colspan="5">
         <layout class="QHBoxLayout" name="horizontalLayout_23">
          <item>
           <widget class="QRadioButton" name="radioHex">
@@ -820,58 +866,19 @@
          </item>
         </layout>
        </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="btnCRC16">
-         <property name="text">
-          <string>CRC16</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
+       <item row="1" column="2">
         <widget class="QPushButton" name="btnCheckSum">
          <property name="text">
           <string>CheckSum</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_22">
-         <property name="spacing">
-          <number>0</number>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnCRC32">
+         <property name="text">
+          <string>CRC32</string>
          </property>
-         <item>
-          <widget class="QLabel" name="label_16">
-           <property name="text">
-            <string>Result Hex: 0x</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineDataResultHex">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="1" column="3">
-        <layout class="QHBoxLayout" name="horizontalLayout_24">
-         <item>
-          <widget class="QLabel" name="label_19">
-           <property name="text">
-            <string>Result ASCII: </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineDataResultASCII">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        </widget>
        </item>
       </layout>
      </widget>

@@ -4,7 +4,7 @@
 #define VER_MODEL     "MODEL"
 #define VER_BOARD     "BOARD"
 #define VER_REFERENCE "REFERENCE"
-#define VER_NUMBER    "0.9.19.0"
+#define VER_NUMBER    "0.9.20.0"
 
 // 각 클래스의 디버그 메시지 on/off 를 위해
 // m_debugEnabled 변수를 무조건 만듬. 부모 클래스에서 setProperty 를 통해 접근 가능하게 함.

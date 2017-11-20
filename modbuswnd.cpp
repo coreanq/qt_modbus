@@ -1,6 +1,7 @@
 #include "modbuswnd.h"
 #include "ui_modbuswnd.h"
 #include "version.h"
+#include "CRC.h"
 
 
 
@@ -23,7 +24,7 @@ ModbusWnd::ModbusWnd(QWidget *parent) :
     m_modelTxPktQueue->setHorizontalHeaderLabels(headers);
     ui->viewTxQueueData->setModel(m_modelTxPktQueue);
     ui->viewTxQueueData->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    ui->viewTxQueueData->setSelectionMode(QAbstractItemView::QAbstractItemView::SingleSelection);
+    ui->viewTxQueueData->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->viewTxQueueData->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     headers.clear();
@@ -33,7 +34,7 @@ ModbusWnd::ModbusWnd(QWidget *parent) :
     ui->viewTxRxResult->setEditTriggers(QAbstractItemView::NoEditTriggers);
 //    ui->viewTxRxResult->horizontalHeader()->setStretchLastSection(true);
     ui->viewTxRxResult->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
-    ui->viewTxRxResult->setSelectionMode(QAbstractItemView::QAbstractItemView::SingleSelection);
+    ui->viewTxRxResult->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->viewTxRxResult->setSelectionBehavior(QAbstractItemView::SelectRows);
 
 
@@ -113,6 +114,7 @@ void ModbusWnd::createConnection()
 
     connect(ui->btnCheckSum,            SIGNAL(clicked() ),                     this, SLOT(btnCheckSumClicked()                     ));
     connect(ui->btnCRC16,               SIGNAL(clicked() ),                     this, SLOT(btnCRC16Clicked()                        ));
+    connect(ui->btnCRC32,               SIGNAL(clicked() ),                     this, SLOT(btnCRC32Clicked()                        ));
     connect(ui->btnDataInputClear,      SIGNAL(clicked() ),                     ui->lineDataInput, SLOT(clear() ));
 
 
@@ -1087,6 +1089,35 @@ void ModbusWnd::btnCRC16Clicked()
 
 }
 
+void ModbusWnd::btnCRC32Clicked()
+{
+    QByteArray inputData;
+    if( ui->radioHex->isChecked() )
+    {
+        QString inputText;
+        inputText = ui->lineDataInput->text();
+        inputText = inputText.replace(" ", "");
+        inputData = QByteArray::fromHex(inputText.toLatin1());
+
+    }
+    else
+    {
+        QString inputText;
+        inputText = ui->lineDataInput->text();
+        inputText = inputText.replace(" ", "");
+        inputData = inputText.toLatin1();
+    }
+
+//    qDebug() << inputData.toHex() << inputData;
+
+
+    QByteArray dstCrc = "";
+    quint16 crc = CRC::Calculate(inputData.constData(), inputData.size(), CRC::CRC_32());
+    dstCrc = QByteArray::fromRawData((char*)&crc, 4);
+    ui->lineDataResultHex->setText(dstCrc.toHex().toUpper().toHex());
+    ui->lineDataResultASCII->setText(dstCrc.toHex().toUpper());
+
+}
 
 
 void ModbusWnd::onLineAscToHexAscInputClicked()

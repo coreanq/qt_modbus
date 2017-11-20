@@ -131,6 +131,7 @@ public slots:
 
     void btnCheckSumClicked();
     void btnCRC16Clicked();
+    void btnCRC32Clicked(); 
 
     void onLineAscToHexAscInputClicked();
     void onLineAscToHexHexInputClicked();
