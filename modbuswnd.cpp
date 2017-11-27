@@ -1062,19 +1062,16 @@ void ModbusWnd::btnCheckSumClicked()
 void ModbusWnd::btnCRC16Clicked()
 {
     QByteArray inputData;
+    QString inputText;
+    inputText = ui->lineDataInput->text();
+    inputText = inputText.replace(" ", "");
+    
     if( ui->radioHex->isChecked() )
     {
-        QString inputText;
-        inputText = ui->lineDataInput->text();
-        inputText = inputText.replace(" ", "");
         inputData = QByteArray::fromHex(inputText.toLatin1());
-
     }
     else
     {
-        QString inputText;
-        inputText = ui->lineDataInput->text();
-        inputText = inputText.replace(" ", "");
         inputData = inputText.toLatin1();
     }
 
@@ -1092,27 +1089,24 @@ void ModbusWnd::btnCRC16Clicked()
 void ModbusWnd::btnCRC32Clicked()
 {
     QByteArray inputData;
+    QString inputText;
+    inputText = ui->lineDataInput->text();
+    inputText = inputText.replace(" ", "");
+    
     if( ui->radioHex->isChecked() )
     {
-        QString inputText;
-        inputText = ui->lineDataInput->text();
-        inputText = inputText.replace(" ", "");
         inputData = QByteArray::fromHex(inputText.toLatin1());
-
     }
     else
     {
-        QString inputText;
-        inputText = ui->lineDataInput->text();
-        inputText = inputText.replace(" ", "");
         inputData = inputText.toLatin1();
     }
 
-//    qDebug() << inputData.toHex() << inputData;
+    qDebug() << inputData.toHex() <<  inputData.size();
 
 
     QByteArray dstCrc = "";
-    quint16 crc = CRC::Calculate(inputData.constData(), inputData.size(), CRC::CRC_32());
+    uint32_t crc = CRC::Calculate(inputData.constData(), inputData.size(), CRC::CRC_32_MPEG2());
     dstCrc = QByteArray::fromRawData((char*)&crc, 4);
     ui->lineDataResultHex->setText(dstCrc.toHex().toUpper().toHex());
     ui->lineDataResultASCII->setText(dstCrc.toHex().toUpper());
