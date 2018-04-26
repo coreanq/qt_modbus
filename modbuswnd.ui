@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>757</width>
-    <height>629</height>
+    <width>724</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="font">
@@ -179,7 +179,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>통신포트</string>
+           <string>Port</string>
           </property>
          </widget>
         </item>
@@ -215,7 +215,7 @@
           <item>
            <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>통신속도[bps]</string>
+             <string>Baudrate</string>
             </property>
            </widget>
           </item>
@@ -436,7 +436,7 @@
      </property>
      <widget class="QWidget" name="tabManualSend">
       <attribute name="title">
-       <string>송신데이터 설정</string>
+       <string>Setting</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
@@ -465,7 +465,7 @@
          <item>
           <widget class="QLabel" name="label_20">
            <property name="text">
-            <string>10진수:</string>
+            <string>Dec:</string>
            </property>
           </widget>
          </item>
@@ -485,7 +485,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>주소(Hex)</string>
+            <string>Addr(Hex)</string>
            </property>
           </widget>
          </item>
@@ -530,7 +530,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>통신갯수(Hex)</string>
+            <string>Count(Hex)</string>
            </property>
           </widget>
          </item>
@@ -632,7 +632,7 @@
          <item>
           <widget class="QLabel" name="label_21">
            <property name="text">
-            <string>16진수:</string>
+            <string>Hex</string>
            </property>
           </widget>
          </item>
@@ -644,7 +644,7 @@
        <item row="0" column="5">
         <widget class="QPushButton" name="btnTxQueueAdd">
          <property name="text">
-          <string>패킷추가</string>
+          <string>Add SendList</string>
          </property>
         </widget>
        </item>
@@ -665,7 +665,7 @@
        <item row="2" column="1">
         <widget class="QCheckBox" name="chkAddrMinusOne">
          <property name="text">
-          <string>Addr -1 ?</string>
+          <string>Apply Addr -1 ?</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -683,7 +683,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>인버터국번(Hex)</string>
+            <string>DeviceID(Hex)</string>
            </property>
           </widget>
          </item>
@@ -728,7 +728,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>통신 지령</string>
+            <string>Cmd</string>
            </property>
           </widget>
          </item>
@@ -962,7 +962,7 @@
      <property name="title">
       <string/>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
+     <layout class="QGridLayout" name="gridLayout_6">
       <item row="0" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <property name="spacing">
@@ -971,7 +971,7 @@
         <item>
          <widget class="QCheckBox" name="chkAutoSend">
           <property name="text">
-           <string>주기적으로전송?</string>
+           <string>Send repeatedly</string>
           </property>
          </widget>
         </item>
@@ -999,7 +999,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>패킷간 전송 주기(msec)</string>
+             <string>Interval(ms)</string>
             </property>
            </widget>
           </item>
@@ -1044,7 +1044,7 @@
           <item>
            <widget class="QCheckBox" name="chkIgnoreAck">
             <property name="text">
-             <string>응답 무시하고 무조건 전송</string>
+             <string>Force send(ignore response)</string>
             </property>
            </widget>
           </item>
@@ -1057,9 +1057,9 @@
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <widget class="QWidget" name="layoutWidget">
-         <layout class="QHBoxLayout" name="horizontalLayout_13">
-          <item>
+        <widget class="QWidget" name="">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0" rowspan="4">
            <widget class="QTableView" name="viewTxQueueData">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1086,41 +1086,37 @@
             </property>
            </widget>
           </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_13">
-            <item>
-             <widget class="QPushButton" name="btnManualSend">
-              <property name="text">
-               <string>수동전송</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnTxQueueUp">
-              <property name="text">
-               <string>위로 이동</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnTxQueueDown">
-              <property name="text">
-               <string>아래로 이동</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnTxQueueRemove">
-              <property name="text">
-               <string>삭제</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="btnManualSend">
+            <property name="text">
+             <string>Transmit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="btnTxQueueUp">
+            <property name="text">
+             <string>Move up</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="btnTxQueueDown">
+            <property name="text">
+             <string>Move down</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QPushButton" name="btnTxQueueRemove">
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="layoutWidget">
+        <widget class="QWidget" name="">
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <item>
            <widget class="QTableView" name="viewTxRxResult">
@@ -1137,16 +1133,19 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
-             <widget class="QLabel" name="label_3">
+             <widget class="QPushButton" name="btnResultFileSave">
               <property name="text">
-               <string>송수신 결과</string>
+               <string>file save</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="btnResultFileSave">
+             <widget class="QCheckBox" name="chkAutoScroll">
               <property name="text">
-               <string>파일 저장</string>
+               <string>AutoScroll</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -1164,23 +1163,25 @@
              </spacer>
             </item>
             <item>
-             <widget class="QCheckBox" name="chkAutoScroll">
-              <property name="text">
-               <string>AutoScroll</string>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QGroupBox" name="groupBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="title">
                <string>Info</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout">
                <item>
                 <widget class="QLabel" name="label">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>TX Cnt</string>
                  </property>
@@ -1201,6 +1202,12 @@
                </item>
                <item>
                 <widget class="QLabel" name="label_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>RX Cnt</string>
                  </property>
@@ -1221,6 +1228,12 @@
                </item>
                <item>
                 <widget class="QLabel" name="temp">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="text">
                   <string>Error Cnt</string>
                  </property>
@@ -1245,7 +1258,7 @@
             <item>
              <widget class="QPushButton" name="btnScreenClear">
               <property name="text">
-               <string>데이터 초기화</string>
+               <string>clear</string>
               </property>
              </widget>
             </item>
