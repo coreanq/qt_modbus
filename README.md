@@ -15,7 +15,7 @@
  - Transform ASCII <-> HEX. 
  - Transform dec <-> hex10
 
-## 사용 예
+## HowTo 
  - load .pro file to Qt Creator 
 
 ## License
