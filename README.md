@@ -18,7 +18,3 @@
 ## HowTo 
  - load .pro file to Qt Creator 
 
-## License
-Licensed under MIT:
-https://opensource.org/licenses/MIT
-
