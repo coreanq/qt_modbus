@@ -1303,7 +1303,11 @@ QByteArray ModbusWnd::toHexString(QByteArray buf)
 
 bool ModbusWnd::check_ModbusRTU_CRC16(QByteArray buf, quint16 &result)
 {
-    if( buf.size() >= 4 )
+    // crc 가 우연히 일치 하는 문제를 수정하기 위한 임시 방편
+    //일단은 패킷이 Read(01 03)인지 Write(01 06)인지에 따라서 CRC처리를 할지 말지를 결정하는 부분을 수정하여
+    // 해결을 하였습니다. Write인 경우에는 8바이트 이상이 되어야 하기 때문에 그 이하인 경우에는 미리 CRC검출이 되지 않도록 했습니다.
+//    if( buf.size() >= 4 )
+    if( buf.size() >= 8 || (buf.size() >= 4 && buf.at(1) != 0x06))
     {
         QByteArray srcCrc = buf.mid(buf.size()-2, 2);
         QByteArray dstCrc = "";
