@@ -1,5 +1,5 @@
 #include "modbuswnd.h"
-#include "ui_modbuswnd.h"
+#include "ui_form.h"
 #include "version.h"
 #include "CRC.h"
 
@@ -7,7 +7,7 @@
 
 ModbusWnd::ModbusWnd(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::ModbusWnd),
+    ui(new Ui::Form),
     m_modelTxPktQueue(new QStandardItemModel(this) ),
     m_modelTxRxResult(new QStandardItemModel(this) ),
     m_threadForSerial(new QThread(this) ),

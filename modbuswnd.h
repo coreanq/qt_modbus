@@ -42,7 +42,7 @@ namespace MODBUS_WND_TX_QUEUE_COLUMNS
 
 
 namespace Ui {
-class ModbusWnd;
+class Form;
 }
 
 class ModbusWnd : public QWidget
@@ -166,7 +166,7 @@ private:
 
     QTimer*                 m_timerAutoSend;
 
-    Ui::ModbusWnd *ui;
+    Ui::Form *ui;
 };
 
 #endif // MODBUSWND_H

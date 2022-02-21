@@ -24,5 +24,5 @@ HEADERS  += mainwindow.h \
     CRC.h
 
 FORMS    += mainwindow.ui \
-    modbuswnd.ui
+    form.ui
 
