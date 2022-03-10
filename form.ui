@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>698</width>
+    <width>749</width>
     <height>624</height>
    </rect>
   </property>
@@ -16,6 +16,11 @@
   <layout class="QGridLayout" name="gridLayout_7">
    <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox_2">
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
      <property name="title">
       <string/>
      </property>
@@ -27,6 +32,11 @@
         </property>
         <item>
          <widget class="QCheckBox" name="chkAutoSend">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>Send repeatedly</string>
           </property>
@@ -36,6 +46,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <spacer name="horizontalSpacer_4">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -54,6 +69,11 @@
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
             </property>
             <property name="text">
              <string>Interval(ms)</string>
@@ -74,6 +94,11 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>1000</string>
             </property>
@@ -87,6 +112,11 @@
           </item>
           <item>
            <spacer name="horizontalSpacer_6">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -100,6 +130,11 @@
           </item>
           <item>
            <widget class="QCheckBox" name="chkIgnoreAck">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Force send(ignore response)</string>
             </property>
@@ -111,10 +146,20 @@
       </item>
       <item row="1" column="0">
        <widget class="QSplitter" name="splitter">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
         <widget class="QWidget" name="layoutWidget">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="0" rowspan="4">
            <widget class="QTableView" name="viewTxQueueData">
@@ -138,13 +183,18 @@
             </property>
             <property name="font">
              <font>
-              <family>굴림체</family>
+              <family>Arial</family>
              </font>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
            <widget class="QPushButton" name="btnManualSend">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Transmit</string>
             </property>
@@ -152,6 +202,11 @@
           </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="btnTxQueueUp">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Move up</string>
             </property>
@@ -159,6 +214,11 @@
           </item>
           <item row="2" column="1">
            <widget class="QPushButton" name="btnTxQueueDown">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Move down</string>
             </property>
@@ -166,6 +226,11 @@
           </item>
           <item row="3" column="1">
            <widget class="QPushButton" name="btnTxQueueRemove">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Delete</string>
             </property>
@@ -174,12 +239,17 @@
          </layout>
         </widget>
         <widget class="QWidget" name="layoutWidget_2">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <item>
            <widget class="QTableView" name="viewTxRxResult">
             <property name="font">
              <font>
-              <family>굴림체</family>
+              <family>Arial</family>
              </font>
             </property>
             <property name="showGrid">
@@ -191,6 +261,11 @@
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
              <widget class="QPushButton" name="btnResultFileSave">
+              <property name="font">
+               <font>
+                <family>Arial</family>
+               </font>
+              </property>
               <property name="text">
                <string>file save</string>
               </property>
@@ -198,6 +273,11 @@
             </item>
             <item>
              <widget class="QCheckBox" name="chkAutoScroll">
+              <property name="font">
+               <font>
+                <family>Arial</family>
+               </font>
+              </property>
               <property name="text">
                <string>AutoScroll</string>
               </property>
@@ -208,6 +288,11 @@
             </item>
             <item>
              <spacer name="verticalSpacer">
+              <property name="font">
+               <font>
+                <family>Arial</family>
+               </font>
+              </property>
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -227,6 +312,11 @@
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="font">
+               <font>
+                <family>Arial</family>
+               </font>
+              </property>
               <property name="title">
                <string>Info</string>
               </property>
@@ -239,6 +329,11 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>TX Cnt</string>
                  </property>
@@ -249,6 +344,11 @@
                </item>
                <item>
                 <widget class="QLabel" name="lblTxCount">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -265,6 +365,11 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>RX Cnt</string>
                  </property>
@@ -275,6 +380,11 @@
                </item>
                <item>
                 <widget class="QLabel" name="lblRxCount">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -291,6 +401,11 @@
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Error Cnt</string>
                  </property>
@@ -301,6 +416,11 @@
                </item>
                <item>
                 <widget class="QLabel" name="lblErrorCount">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -314,6 +434,11 @@
             </item>
             <item>
              <widget class="QPushButton" name="btnScreenClear">
+              <property name="font">
+               <font>
+                <family>Arial</family>
+               </font>
+              </property>
               <property name="text">
                <string>clear</string>
               </property>
@@ -331,7 +456,7 @@
    <item row="1" column="0">
     <widget class="QTabWidget" name="tabAsc2Hex">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -345,11 +470,16 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>100</height>
+       <height>16777215</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabManualSend">
       <attribute name="title">
@@ -358,6 +488,11 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <widget class="QComboBox" name="cmbCommMode">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <item>
           <property name="text">
            <string>RTU</string>
@@ -372,6 +507,11 @@
        </item>
        <item row="0" column="6" rowspan="3">
         <widget class="Line" name="line">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -381,13 +521,24 @@
         <layout class="QHBoxLayout" name="horizontalLayout_25">
          <item>
           <widget class="QLabel" name="label_20">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>Dec:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineDecimalChange"/>
+          <widget class="QLineEdit" name="lineDecimalChange">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -400,6 +551,11 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
            </property>
            <property name="text">
             <string>Addr(Hex)</string>
@@ -426,6 +582,11 @@
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -446,6 +607,11 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>Count(Hex)</string>
            </property>
@@ -458,6 +624,11 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
            </property>
            <property name="editable">
             <bool>true</bool>
@@ -548,18 +719,34 @@
         <layout class="QHBoxLayout" name="horizontalLayout_26">
          <item>
           <widget class="QLabel" name="label_21">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>Hex</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineHexChange"/>
+          <widget class="QLineEdit" name="lineHexChange">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
        <item row="0" column="5">
         <widget class="QPushButton" name="btnTxQueueAdd">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <property name="text">
           <string>Add SendList</string>
          </property>
@@ -569,18 +756,34 @@
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
           <widget class="QLabel" name="lblWriteData">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>Write Data(Hex)</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineWriteData"/>
+          <widget class="QLineEdit" name="lineWriteData">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
        <item row="2" column="1">
         <widget class="QCheckBox" name="chkAddrMinusOne">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+          </font>
+         </property>
          <property name="text">
           <string>Apply Addr -1 ?</string>
          </property>
@@ -598,6 +801,11 @@
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
            </property>
            <property name="text">
             <string>DeviceID(Hex)</string>
@@ -624,6 +832,11 @@
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>01</string>
            </property>
@@ -644,6 +857,11 @@
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
+           </property>
            <property name="text">
             <string>Cmd</string>
            </property>
@@ -662,6 +880,11 @@
              <width>200</width>
              <height>0</height>
             </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+            </font>
            </property>
            <property name="editable">
             <bool>true</bool>
@@ -876,14 +1099,25 @@
    </item>
    <item row="2" column="0">
     <widget class="QGroupBox" name="grbSetting">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>90</height>
+       <height>16777215</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
      <property name="title">
-      <string>통신 상태</string>
+      <string>Comm Option</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
@@ -895,6 +1129,11 @@
             <width>100</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
           </property>
           <property name="text">
            <string>Open</string>
@@ -915,6 +1154,11 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>Close</string>
           </property>
@@ -929,6 +1173,11 @@
        <layout class="QHBoxLayout" name="horizontalLayout_17">
         <item>
          <widget class="QLabel" name="label_12">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>Timeout(msec)</string>
           </property>
@@ -954,6 +1203,11 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>500</string>
           </property>
@@ -963,6 +1217,11 @@
       </item>
       <item row="0" column="2">
        <spacer name="horizontalSpacer">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -982,6 +1241,11 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
         <property name="text">
          <string>Minimum Timeout: (3.5T) * 2 + (1.5T * length)</string>
         </property>
@@ -997,6 +1261,11 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>1.5 char(us)</string>
           </property>
@@ -1009,6 +1278,11 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
           </property>
           <property name="text">
            <string>0</string>
@@ -1033,6 +1307,11 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>Port</string>
           </property>
@@ -1046,6 +1325,11 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
          </widget>
         </item>
         <item>
@@ -1055,6 +1339,11 @@
             <width>30</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
           </property>
           <property name="text">
            <string>Re</string>
@@ -1069,6 +1358,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
            <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Baudrate</string>
             </property>
@@ -1076,6 +1370,11 @@
           </item>
           <item>
            <widget class="QComboBox" name="cmbBaudrate">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <item>
              <property name="text">
               <string>1200</string>
@@ -1124,6 +1423,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_14">
           <item>
            <widget class="QLabel" name="label_8">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Data bits</string>
             </property>
@@ -1131,6 +1435,11 @@
           </item>
           <item>
            <widget class="QComboBox" name="cmbDataBits">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <item>
              <property name="text">
               <string>8</string>
@@ -1159,6 +1468,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_15">
           <item>
            <widget class="QLabel" name="label_9">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Parity</string>
             </property>
@@ -1166,6 +1480,11 @@
           </item>
           <item>
            <widget class="QComboBox" name="cmbParity">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <item>
              <property name="text">
               <string>none</string>
@@ -1189,6 +1508,11 @@
          <layout class="QHBoxLayout" name="horizontalLayout_16">
           <item>
            <widget class="QLabel" name="label_10">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <property name="text">
              <string>Stop bits</string>
             </property>
@@ -1196,6 +1520,11 @@
           </item>
           <item>
            <widget class="QComboBox" name="cmbStopBits">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+             </font>
+            </property>
             <item>
              <property name="text">
               <string>1</string>
@@ -1214,6 +1543,11 @@
       </item>
       <item row="1" column="4">
        <spacer name="horizontalSpacer_2">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+         </font>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -1235,6 +1569,11 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
+          </property>
           <property name="text">
            <string>3.5 char(us)</string>
           </property>
@@ -1247,6 +1586,11 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+           </font>
           </property>
           <property name="text">
            <string>0</string>
