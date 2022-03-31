@@ -303,7 +303,8 @@ void SerialPort::onReadyRead()
     QByteArray buffer;
     while(m_port->bytesAvailable())
     {
-        m_timerResponseTimeout->start(m_msec_responseTimeout, Qt::PreciseTimer, this);
+        if( m_timerResponseTimeout->isActive() == true )
+            m_timerResponseTimeout->start(m_msec_responseTimeout, Qt::PreciseTimer, this);
         buffer = m_port->read(1);
 
         if( m_commMode == "LSBUS")

@@ -728,10 +728,10 @@ void ModbusWnd::onLineModbusEditingFinished()
 {
     QString str = ui->lineModbusTimeout->text();
 
-    if( ui->lineModbusTimeout->text().toInt() < 10 )
+    if( ui->lineModbusTimeout->text().toInt() < 1 )
     {
-        QMessageBox::warning(this, "Error", "modbus timeout should not be lower than 10 msec");
-        ui->lineModbusTimeout->setText("10");
+        QMessageBox::warning(this, "Error", "modbus timeout should not be lower than 1 msec");
+        ui->lineModbusTimeout->setText("1");
         return;
     }
     m_port->setResponseTimeout(str.toInt() );
