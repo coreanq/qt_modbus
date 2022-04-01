@@ -11,7 +11,8 @@ ModbusWnd::ModbusWnd(QWidget *parent) :
     m_modelTxPktQueue(new QStandardItemModel(this) ),
     m_modelTxRxResult(new QStandardItemModel(this) ),
     m_threadForSerial(new QThread(this) ),
-    m_timerAutoSend(new QTimer(this))
+    m_timerAutoSend(new QTimer(this)),
+    m_reHex("[a-fA-F0-9]+", QRegularExpression::CaseInsensitiveOption)
 {
     ui->setupUi(this);
     onBtnRefreshClicked();
@@ -46,6 +47,9 @@ ModbusWnd::ModbusWnd(QWidget *parent) :
 
     createConnection();
     readSettings();
+
+    ui->lineWriteData->setValidator(new QRegularExpressionValidator(m_reHex) );
+    ui->lineAddr->setValidator(new QRegularExpressionValidator(m_reHex) );
 }
 
 ModbusWnd::~ModbusWnd()

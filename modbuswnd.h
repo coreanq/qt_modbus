@@ -12,6 +12,7 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QTimer>
+#include <QRegularExpression>
 
 
 namespace MODBUS_WND_TXRX_RESULT_COLUMNS
@@ -165,6 +166,7 @@ private:
     QThread*                m_threadForSerial;
 
     QTimer*                 m_timerAutoSend;
+    QRegularExpression		m_reHex;
 
     Ui::Form *ui;
 };
