@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>749</width>
-    <height>624</height>
+    <width>751</width>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <widget class="QGroupBox" name="groupBox_2">
      <property name="font">
       <font>
-       <family>Arial</family>
+       <kerning>false</kerning>
       </font>
      </property>
      <property name="title">
@@ -34,7 +34,7 @@
          <widget class="QCheckBox" name="chkAutoSend">
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -48,7 +48,7 @@
            <spacer name="horizontalSpacer_4">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="orientation">
@@ -72,7 +72,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -96,7 +96,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -114,7 +114,7 @@
            <spacer name="horizontalSpacer_6">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="orientation">
@@ -132,7 +132,7 @@
            <widget class="QCheckBox" name="chkIgnoreAck">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -148,7 +148,7 @@
        <widget class="QSplitter" name="splitter">
         <property name="font">
          <font>
-          <family>Arial</family>
+          <kerning>false</kerning>
          </font>
         </property>
         <property name="orientation">
@@ -157,7 +157,7 @@
         <widget class="QWidget" name="layoutWidget">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
@@ -183,7 +183,7 @@
             </property>
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
            </widget>
@@ -192,7 +192,7 @@
            <widget class="QPushButton" name="btnManualSend">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -204,7 +204,7 @@
            <widget class="QPushButton" name="btnTxQueueUp">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -216,7 +216,7 @@
            <widget class="QPushButton" name="btnTxQueueDown">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -228,7 +228,7 @@
            <widget class="QPushButton" name="btnTxQueueRemove">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -241,7 +241,7 @@
         <widget class="QWidget" name="layoutWidget_2">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
@@ -249,7 +249,7 @@
            <widget class="QTableView" name="viewTxRxResult">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="showGrid">
@@ -263,7 +263,7 @@
              <widget class="QPushButton" name="btnResultFileSave">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <kerning>false</kerning>
                </font>
               </property>
               <property name="text">
@@ -275,7 +275,7 @@
              <widget class="QCheckBox" name="chkAutoScroll">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <kerning>false</kerning>
                </font>
               </property>
               <property name="text">
@@ -290,7 +290,7 @@
              <spacer name="verticalSpacer">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <kerning>false</kerning>
                </font>
               </property>
               <property name="orientation">
@@ -314,13 +314,33 @@
               </property>
               <property name="font">
                <font>
-                <family>Arial</family>
+                <kerning>false</kerning>
                </font>
               </property>
               <property name="title">
                <string>Info</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="QLabel" name="txtbps">
+                 <property name="text">
+                  <string>Bytes/s</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblBps">
+                 <property name="text">
+                  <string>0</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item>
                 <widget class="QLabel" name="label">
                  <property name="sizePolicy">
@@ -331,7 +351,7 @@
                  </property>
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -346,7 +366,7 @@
                 <widget class="QLabel" name="lblTxCount">
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -367,7 +387,7 @@
                  </property>
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -382,7 +402,7 @@
                 <widget class="QLabel" name="lblRxCount">
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -403,7 +423,7 @@
                  </property>
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -418,7 +438,7 @@
                 <widget class="QLabel" name="lblErrorCount">
                  <property name="font">
                   <font>
-                   <family>Arial</family>
+                   <kerning>false</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -436,7 +456,7 @@
              <widget class="QPushButton" name="btnScreenClear">
               <property name="font">
                <font>
-                <family>Arial</family>
+                <kerning>false</kerning>
                </font>
               </property>
               <property name="text">
@@ -475,7 +495,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <kerning>false</kerning>
       </font>
      </property>
      <property name="currentIndex">
@@ -490,7 +510,7 @@
         <widget class="QComboBox" name="cmbCommMode">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <item>
@@ -509,7 +529,7 @@
         <widget class="Line" name="line">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <property name="orientation">
@@ -523,7 +543,7 @@
           <widget class="QLabel" name="label_20">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -535,7 +555,7 @@
           <widget class="QLineEdit" name="lineDecimalChange">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
           </widget>
@@ -554,7 +574,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -584,11 +604,11 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
-            <string/>
+            <string>0001</string>
            </property>
            <property name="maxLength">
             <number>4</number>
@@ -609,7 +629,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -620,14 +640,14 @@
          <item>
           <widget class="QComboBox" name="cmbSendCount">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="editable">
@@ -721,7 +741,7 @@
           <widget class="QLabel" name="label_21">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -733,7 +753,7 @@
           <widget class="QLineEdit" name="lineHexChange">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
           </widget>
@@ -744,7 +764,7 @@
         <widget class="QPushButton" name="btnTxQueueAdd">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <property name="text">
@@ -758,7 +778,7 @@
           <widget class="QLabel" name="lblWriteData">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -770,8 +790,11 @@
           <widget class="QLineEdit" name="lineWriteData">
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
+           </property>
+           <property name="text">
+            <string>0000</string>
            </property>
           </widget>
          </item>
@@ -781,7 +804,7 @@
         <widget class="QCheckBox" name="chkAddrMinusOne">
          <property name="font">
           <font>
-           <family>Arial</family>
+           <kerning>false</kerning>
           </font>
          </property>
          <property name="text">
@@ -804,7 +827,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -834,7 +857,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -859,7 +882,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="text">
@@ -883,7 +906,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Arial</family>
+             <kerning>false</kerning>
             </font>
            </property>
            <property name="editable">
@@ -1113,7 +1136,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <kerning>false</kerning>
       </font>
      </property>
      <property name="title">
@@ -1132,7 +1155,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1156,7 +1179,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1175,7 +1198,7 @@
          <widget class="QLabel" name="label_12">
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1205,7 +1228,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1219,7 +1242,7 @@
        <spacer name="horizontalSpacer">
         <property name="font">
          <font>
-          <family>Arial</family>
+          <kerning>false</kerning>
          </font>
         </property>
         <property name="orientation">
@@ -1243,7 +1266,7 @@
         </property>
         <property name="font">
          <font>
-          <family>Arial</family>
+          <kerning>false</kerning>
          </font>
         </property>
         <property name="text">
@@ -1263,7 +1286,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1281,7 +1304,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1309,7 +1332,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1327,7 +1350,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
          </widget>
@@ -1342,7 +1365,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1360,7 +1383,7 @@
            <widget class="QLabel" name="label_6">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -1372,7 +1395,7 @@
            <widget class="QComboBox" name="cmbBaudrate">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <item>
@@ -1425,7 +1448,7 @@
            <widget class="QLabel" name="label_8">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -1437,7 +1460,7 @@
            <widget class="QComboBox" name="cmbDataBits">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <item>
@@ -1470,7 +1493,7 @@
            <widget class="QLabel" name="label_9">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -1482,7 +1505,7 @@
            <widget class="QComboBox" name="cmbParity">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <item>
@@ -1510,7 +1533,7 @@
            <widget class="QLabel" name="label_10">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <property name="text">
@@ -1522,7 +1545,7 @@
            <widget class="QComboBox" name="cmbStopBits">
             <property name="font">
              <font>
-              <family>Arial</family>
+              <kerning>false</kerning>
              </font>
             </property>
             <item>
@@ -1545,7 +1568,7 @@
        <spacer name="horizontalSpacer_2">
         <property name="font">
          <font>
-          <family>Arial</family>
+          <kerning>false</kerning>
          </font>
         </property>
         <property name="orientation">
@@ -1571,7 +1594,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">
@@ -1589,7 +1612,7 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
+            <kerning>false</kerning>
            </font>
           </property>
           <property name="text">

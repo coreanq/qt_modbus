@@ -12,11 +12,16 @@ ModbusWnd::ModbusWnd(QWidget *parent) :
     m_modelTxRxResult(new QStandardItemModel(this) ),
     m_threadForSerial(new QThread(this) ),
     m_timerAutoSend(new QTimer(this)),
-    m_reHex("[a-fA-F0-9]+", QRegularExpression::CaseInsensitiveOption)
+    m_timer100msec(new QTimer(this)),
+    m_reHex("[a-fA-F0-9]+", QRegularExpression::CaseInsensitiveOption),
+    m_recvedCount(0),
+    m_sendedCount(0),
+    m_1msCount(1)
 {
     ui->setupUi(this);
     onBtnRefreshClicked();
     m_timerAutoSend->setSingleShot(true);
+    m_timer100msec->setInterval(100);
 
     ui->cmbBaudrate->setCurrentText("9600");
 
@@ -138,6 +143,7 @@ void ModbusWnd::createConnection()
 
 
     connect(m_timerAutoSend,            SIGNAL(timeout()),                      this, SLOT(onTimerAutoSendTimeout()                 ));
+    connect(m_timer100msec,             SIGNAL(timeout()),                      this, SLOT(onTimer100msTimeout()                 ));
 
     connect(m_modelTxRxResult,          SIGNAL(rowsInserted(const QModelIndex &, int, int)),
             this, SLOT(onModelTxResultRowInserted(const QModelIndex &, int, int)));
@@ -436,8 +442,12 @@ void ModbusWnd::addDataToTxPktQueueModel(QStringList parsedData)
 void ModbusWnd::onSendedData(QByteArray data)
 {
     QStringList sendedData;
+    m_sendedCount += data.size();
+
     onParseData(sendedData, data);
     sendedData[MODBUS_WND_TXRX_RESULT_COLUMNS::STATUS] = "[TX " + sendedData.at(MODBUS_WND_TXRX_RESULT_COLUMNS::STATUS);
+
+    m_sendedTimeStamp = QDateTime::currentMSecsSinceEpoch();
     addDataToTxRxResultModel(sendedData);
     addTxCount();
 }
@@ -445,8 +455,15 @@ void ModbusWnd::onSendedData(QByteArray data)
 void ModbusWnd::onRecvedData(QByteArray data)
 {
     QStringList receivedData;
+
+    m_recvedCount += data.size();
+
     onParseData(receivedData, data);
     receivedData[MODBUS_WND_TXRX_RESULT_COLUMNS::STATUS] = "[RX " + receivedData.at(MODBUS_WND_TXRX_RESULT_COLUMNS::STATUS);
+
+    m_recvedTimeStamp = QDateTime::currentMSecsSinceEpoch();
+
+    //qDebug() << m_recvedTimeStamp - m_sendedTimeStamp <<  " " <<   receivedData << "\n";
     addDataToTxRxResultModel(receivedData);
     addRxCount();
 }
@@ -695,15 +712,23 @@ void ModbusWnd::onChkAutoSendToggled(bool checked)
             interval = 1;
         }
 
+        m_sendedCount= 0;
+        m_recvedCount = 0;
+        m_1msCount = 0;
+        m_previousTimeStamp = QDateTime::currentMSecsSinceEpoch();
+
+
         connect(m_port, SIGNAL(sgReadyEntered()), m_timerAutoSend, SLOT(start()));
         m_timerAutoSend->setInterval( interval );
         m_timerAutoSend->start();
+        m_timer100msec->start();
 
     }
     else
     {
         disconnect(m_port, SIGNAL(sgReadyEntered()), 0, 0);
         m_timerAutoSend->stop();
+        m_timer100msec->stop();
         ui->lineInterval->setEnabled(true);
     }
 }
@@ -760,6 +785,7 @@ void ModbusWnd::onPortDisconnected()
     ui->btnRefresh->setEnabled(true);
     ui->cmbComPort->setEnabled(true);
     m_timerAutoSend->stop();
+    m_timer100msec->stop();
 
     emit sgDisconnected( m_port->errorString());
 }
@@ -1172,6 +1198,24 @@ void ModbusWnd::onTimerAutoSendTimeout()
     onReadyEntered();
 }
 
+void ModbusWnd::onTimer100msTimeout()
+{
+    // total bytes in 100 ms  * 10 for 1sec
+    quint64 currentTimeStamp = QDateTime::currentMSecsSinceEpoch();
+
+    do {
+
+        m_1msCount += currentTimeStamp - m_previousTimeStamp;
+
+        ui->lblBps->setText( QString("%1").arg( (int)( (((double) (m_recvedCount + m_sendedCount)) / (double) m_1msCount) * 1000 )));
+
+        m_previousTimeStamp = currentTimeStamp;
+
+    }while(false);
+
+}
+
+
 void ModbusWnd::onModelTxResultRowInserted(const QModelIndex & parent, int first, int last)
 {
 //    qDebug() << Q_FUNC_INFO << first << last << m_modelTxRxResult->rowCount();
@@ -1394,7 +1438,7 @@ quint8 ModbusWnd::LSBUS_sum (QByteArray buf)
 QByteArray ModbusWnd::makeRTUFrame(QByteArray slaveAddr, QByteArray functionCode, QByteArray startAddr,
                                    QByteArray numOfRegister, QByteArray byteCount, const QByteArray writeData)
 {
-    Q_ASSERT(writeData.size() <= 252);
+    Q_ASSERT(writeData.size() <= 252 * 2); // because of hex string
     QByteArray modbusPDU = "";
 
 

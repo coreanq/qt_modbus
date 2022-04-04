@@ -143,6 +143,7 @@ public slots:
 
 
     void onTimerAutoSendTimeout();
+    void onTimer100msTimeout();
     void onModelTxResultRowInserted(const QModelIndex &parent, int first, int last);
     void onViewTxQueueDataSelectionCurrentRowChanged(const QModelIndex &current, const QModelIndex &previous);
     void sendModelTxPktQueue(int index );
@@ -166,7 +167,15 @@ private:
     QThread*                m_threadForSerial;
 
     QTimer*                 m_timerAutoSend;
+    QTimer* 				m_timer100msec;
     QRegularExpression		m_reHex;
+
+    quint32 				m_recvedCount;
+    quint32					m_sendedCount;
+    quint64					m_1msCount;
+    quint64					m_previousTimeStamp;
+    qint64					m_recvedTimeStamp;
+    qint64					m_sendedTimeStamp;
 
     Ui::Form *ui;
 };
